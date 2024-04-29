@@ -1,0 +1,52 @@
+<!-- <p>prm-table-view works!</p> -->
+
+
+<table mat-table [dataSource]="studyFormTable" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <!-- [innerText]="element.studyId" -->
+    <!-- <a [routerLink]="['/prmForm/' + element.riskStatus]">  <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon></a> -->
+    <ng-container matColumnDef="studyId">
+        <th mat-header-cell *matHeaderCellDef> </th>
+       <td mat-cell *matCellDef="let element" ><a [routerLink]="['/prmForm/' + element.studyDetailsId]">  <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon></a> </td>
+      </ng-container>
+
+    <ng-container matColumnDef="platform">
+      <th mat-header-cell *matHeaderCellDef> Platform </th>
+      <td mat-cell *matCellDef="let element"> {{element.platform}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="riskStatus">
+      <th mat-header-cell *matHeaderCellDef> Risk Status</th>
+      <td mat-cell *matCellDef="let element"> {{element.ragStatus}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="sponsor">
+      <th mat-header-cell *matHeaderCellDef> Sponsor </th>
+      <td mat-cell *matCellDef="let element"> {{element.sponsorName}} </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="protocol">
+      <th mat-header-cell *matHeaderCellDef> Protocol </th>
+      <td mat-cell *matCellDef="let element"> {{element.protocolNumber}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="projectCode">
+        <th mat-header-cell *matHeaderCellDef> Project Code </th>
+        <td mat-cell *matCellDef="let element"> {{element.projectCode}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="studyStatus">
+        <th mat-header-cell *matHeaderCellDef> Study Status </th>
+        <td mat-cell *matCellDef="let element"> {{element.studyStatus}} </td>
+      </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>

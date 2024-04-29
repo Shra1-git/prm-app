@@ -1,0 +1,179 @@
+<!-- <p>prm-form works!</p>
+{{formData | json}}
+
+{{prmForm.value | json}}
+{{prmForm.dirty}} -->
+
+<p> 
+    <mat-toolbar>
+      <span>PRM Study Details</span>
+    </mat-toolbar>
+</p>
+
+<form [formGroup]="prmForm" class="example-form" (ngSubmit)="saveStudy()">
+    
+ 
+    
+<!-- <mat-form-field class="example-full-width"> 
+    <mat-label>Platform</mat-label>
+    <input 
+    
+    formControlName = "platform"
+    placeholder="Enter study ID"
+    matInput>
+</mat-form-field> -->
+
+<mat-form-field class="example-full-width">
+    <mat-label>Platform</mat-label>
+    <mat-select formControlName = "platform">
+      @for (option of platformOptions; track option) {
+        <mat-option [value]="option">{{option}}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+
+    
+
+<mat-form-field class="example-full-width">
+    <mat-label>RAG Status</mat-label>
+    <mat-select formControlName = "ragStatus">
+      @for (option of ragOptions; track option) {
+        <mat-option [value]="option">{{option}}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+
+    
+
+<mat-form-field class="example-full-width">
+    <mat-label>Study Status</mat-label>
+    <mat-select formControlName = "studyStatus">
+      @for (option of studyOptions; track option) {
+        <mat-option [value]="option">{{option}}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+
+    
+<mat-form-field class="example-full-width"> 
+    <mat-label>Project Code</mat-label>
+    <input 
+    
+    formControlName = "projectCode"
+    placeholder="Enter project code"
+    matInput>
+</mat-form-field>
+
+    
+<mat-form-field class="example-full-width"> 
+    <mat-label>Sponsor Name</mat-label>
+    <input 
+    
+    formControlName = "sponsorName"
+    placeholder="Enter sponsor name"
+    matInput>
+</mat-form-field>
+
+    
+<mat-form-field class="example-full-width"> 
+    <mat-label>Protocol Number</mat-label>
+    <input 
+    
+    formControlName = "protocolNumber"
+    placeholder="Enter protocol number"
+    matInput>
+</mat-form-field>
+
+    
+<mat-form-field class="example-full-width"> 
+    <mat-label>Lead Programmer</mat-label>
+    <input 
+    
+    formControlName = "leadProgrammer"
+    placeholder="Enter lead programmer"
+    matInput>
+</mat-form-field>
+
+    
+<mat-form-field class="example-full-width"> 
+    <mat-label>Clinical Research Lead</mat-label>
+    <input 
+    
+    formControlName = "clinicalResearchLead"
+    placeholder="Enter clinical research lead"
+    matInput>
+</mat-form-field>
+
+    
+<mat-form-field class="example-full-width"> 
+    <mat-label>Technical Designer</mat-label>
+    <input 
+    
+    formControlName = "technicalDesigner"
+    placeholder="Enter technical designer"
+    matInput>
+</mat-form-field>
+ 
+    
+<mat-form-field class="example-full-width"> 
+    <mat-label>Validation Team Lead</mat-label>
+    <input 
+    
+    formControlName = "validationLead"
+    placeholder="Enter validation team lead"
+    matInput>
+</mat-form-field>
+ 
+    
+<mat-form-field class="example-full-width"> 
+    <mat-label>Data Team Lead</mat-label>
+    <input 
+    
+    formControlName = "dataTeamLead"
+    placeholder="Enter data team lead"
+    matInput>
+</mat-form-field>
+ 
+    
+<mat-form-field class="example-full-width"> 
+    <mat-label>Planned Migration Date</mat-label>
+    <input 
+    
+    formControlName = "plannedMigrationDate"
+    placeholder="Enter planned migration date"
+    matInput>
+</mat-form-field>
+ 
+    
+<mat-form-field class="example-full-width"> 
+    <mat-label>Actual Migration Date</mat-label>
+    <input 
+    
+    formControlName = "actualMigrationDate"
+    placeholder="Enter actual migration date"
+    matInput>
+</mat-form-field>
+ 
+    
+<mat-form-field class="example-full-width"> 
+    <mat-label>PRCF Number</mat-label>
+    <input 
+    
+    formControlName = "prcfNumber"
+    placeholder="Enter prcf number"
+    matInput>
+</mat-form-field>
+ 
+    
+<mat-form-field class="example-full-width"> 
+    <mat-label>LM Action Items</mat-label>
+    <input 
+    
+    formControlName = "lmActionItems"
+    placeholder="Enter lm action items"
+    matInput>
+</mat-form-field>
+
+<button mat-raised-button color="primary" type="submit">Submit</button>
+ 
+</form>
